@@ -196,7 +196,7 @@ export function Sidebar() {
             )}
             <div className="flex flex-col gap-1">
               <button
-                onClick={() => showToast('Predictive model v2.4 running with 94.8% precision', 'info')}
+                onClick={() => showToast('Predictive model v2.4 running with 87.4% accuracy (XGBoost)', 'info')}
                 title={isCollapsed ? 'Model Engine (v2.4)' : undefined}
                 className={`flex items-center rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all ${
                   isCollapsed
@@ -208,11 +208,15 @@ export function Sidebar() {
                   <Layers className="w-4 h-4 text-secondary shrink-0" />
                   {!isCollapsed && <span>Model Engine</span>}
                 </div>
-                {!isCollapsed && <span className="text-[10px] font-mono text-secondary">v2.4</span>}
+                {!isCollapsed && (
+                  <span className="text-[10px] font-mono text-secondary-dim font-bold bg-surface-container-low px-1.5 py-0.5 rounded-md">
+                    v2.4
+                  </span>
+                )}
               </button>
 
               <button
-                onClick={() => showToast('HRIS Workday connector live and synchronized', 'info')}
+                onClick={() => showToast('Workday HRIS telemetry connected and streaming live', 'success')}
                 title={isCollapsed ? 'Workday HRIS (Live)' : undefined}
                 className={`flex items-center rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all ${
                   isCollapsed
@@ -221,11 +225,14 @@ export function Sidebar() {
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-secondary shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                   {!isCollapsed && <span>Workday HRIS</span>}
                 </div>
                 {!isCollapsed && (
-                  <span className="text-[10px] font-medium text-emerald-600 font-mono">Live</span>
+                  <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded-md flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Live
+                  </span>
                 )}
               </button>
             </div>
@@ -239,17 +246,17 @@ export function Sidebar() {
             <div className="p-2 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex flex-col gap-0.5">
               <div className="flex items-center justify-between text-[10px] font-bold text-on-surface">
                 <span>Model Telemetry</span>
-                <span className="text-emerald-600 font-mono">94.8% Acc</span>
+                <span className="text-emerald-600 font-mono">87.4% Acc</span>
               </div>
               <p className="text-[9px] text-on-surface-variant leading-tight">
-                Trained on 14,000+ tech attrition trajectories.
+                Trained on IBM HR analytics dataset (0.89 AUC).
               </p>
             </div>
           ) : (
             <div
               className="w-10 h-10 mx-auto rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center text-emerald-600 cursor-pointer"
-              title="Telemetry: 94.8% Accuracy"
-              onClick={() => showToast('Telemetry: 94.8% Accuracy trained on 14,000+ trajectories', 'info')}
+              title="Telemetry: 87.4% Accuracy (XGBoost)"
+              onClick={() => showToast('Telemetry: 87.4% Accuracy trained on IBM HR dataset', 'info')}
             >
               <Activity className="w-4 h-4" />
             </div>

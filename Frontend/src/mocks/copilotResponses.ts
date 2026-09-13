@@ -135,7 +135,7 @@ export function getMockCopilotResponse(query: string): CopilotMessage {
     id: `copilot-${Date.now()}`,
     sender: 'copilot',
     timestamp: 'Just now',
-    text: `Based on your query regarding "${query}", RetainAI synthesized workforce signals across Workday, Carta, and Jira telemetry:\n\n* **Cohort Trajectory:** Overall retention stability remains strong at 96.6% across low and medium risk bands.\n* **Recommended Action:** Monitor the 42 high-risk employees identified in the latest Workday sync (#4192).\n* **Predictive Precision:** Current model v2.4 operates at 94.8% precision for 90-day churn forecasting.`,
+    text: `Based on your query regarding "${query}", RetainAI synthesized workforce signals across Workday, Carta, and Jira telemetry:\n\n* **Cohort Trajectory:** Overall retention stability remains strong at 96.6% across low and medium risk bands.\n* **Recommended Action:** Monitor the 42 high-risk employees identified in the latest Workday sync (#4192).\n* **Predictive Precision:** Current XGBoost model operates at 87.4% accuracy (84.2% precision) for churn forecasting.`,
     meta: {
       generatedMs: 410,
       actions: [
