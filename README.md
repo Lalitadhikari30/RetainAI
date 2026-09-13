@@ -2,7 +2,11 @@
 
 <div align="center">
 
-![RetainAI Logo](Frontend/public/retainai-icon.png)
+<p>
+  <img src="Frontend/public/assets/retainAI2.png" width="45%" />
+  <img src="Frontend/public/assets/retainAI 1.png" width="45%" />
+</p>
+
 
 ### **Predict · Prevent · Retain**
 *Know who is at risk before they hand in notice.*
