@@ -403,7 +403,7 @@ Ensure you have the following installed on your machine:
 
 ---
 
-## 🤝 Contributing & License
-Distributed under the MIT License. See `LICENSE` for more information.
+## 🏢 Enterprise Terms & Ownership
+Proprietary software built for internal enterprise workforce analytics. All rights reserved.
 
 Developed with passion for predictive workforce intelligence by the **RetainAI Engineering Team**.
