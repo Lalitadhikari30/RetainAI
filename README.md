@@ -145,9 +145,23 @@ RetainAI implements fine-grained enterprise roles:
 
 ---
 
-## 🔑 Demo Access Credentials
+## 🏢 Enterprise Access & Provisioning Model (Internal B2B Tool)
 
-The database is pre-seeded with enterprise test accounts (passwords are BCrypt-hashed):
+> [!IMPORTANT]
+> **No Public Self-Registration / Sign-Up:**  
+> RetainAI is strictly an **internal B2B enterprise platform**. Because it processes sensitive workforce compensation, appraisal history, and retention flight-risks, **individual users or external visitors cannot publicly self-register or sign up**.
+
+### How Access Works in an Organization:
+1. **Enterprise Procurement:** An organization procures/purchases RetainAI enterprise workspace licenses.
+2. **Tenant Provisioning:** The corporate workspace is deployed and linked with company security policies.
+3. **Internal Account Provisioning:** The company's Executive HR Admin provisions People Manager seats and configures role-based access. Individual users receive access credentials directly from their organization's internal HR team.
+4. **Zero Open Registrations:** Keeps company attrition data strictly confidential and accessible only to authorized HR and managerial personnel.
+
+---
+
+## 🔑 Demo Access Credentials (For Testing & Review)
+
+Because public sign-up is disabled by design, the database includes **pre-seeded corporate test accounts** so recruiters, reviewers, and developers can test both administrative and managerial workflows:
 
 | Role | Email | Password | Scope |
 | :--- | :--- | :--- | :--- |
@@ -155,6 +169,8 @@ The database is pre-seeded with enterprise test accounts (passwords are BCrypt-h
 | **People Manager** | `alex.chen@company.com` | `password123` | Engineering Manager (Direct reports access) |
 | **People Manager (Sales)** | `carlos.mendoza@company.com` | `password123` | Sales Team Lead |
 | **People Manager (Product)** | `sarah.jenkins@company.com` | `password123` | Product Management Lead |
+
+> 💡 **Testing Note:** On the login screen, select **HR Admin** or **People Manager** and enter the corresponding demo credentials above to sign in.
 
 ---
 
