@@ -21,7 +21,7 @@ public class JwtTokenProvider {
 
     public JwtTokenProvider(
             @Value("${retainai.jwt.secret}") String secret,
-            @Value("${retainai.jwt.expiration-ms}") long expirationMs) {
+            @Value("${retainai.jwt.expiration-ms:86400000}") long expirationMs) {
         this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
         this.expirationMs = expirationMs;
     }
