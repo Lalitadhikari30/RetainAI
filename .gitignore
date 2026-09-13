@@ -1,0 +1,72 @@
+# ==========================================
+# RetainAI Root GitIgnore
+# ==========================================
+
+# --- Secrets & Environment Variables (CRITICAL) ---
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!Frontend/.env.example
+!Backend/.env.example
+!ml-service/.env.example
+application-local.yml
+application-local.properties
+**/application-local.yml
+**/application-local.properties
+
+# --- Dependencies ---
+node_modules/
+**/node_modules/
+venv/
+**/venv/
+.venv/
+**/env/
+
+# --- Java & Maven Build Output ---
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/
+
+# --- Frontend Build Output ---
+dist/
+**/dist/
+build/
+**/build/
+.vite/
+**/.vite/
+coverage/
+
+# --- Python & ML Caches ---
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+**/.pytest_cache/
+
+# --- Logs & Temp ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.tempmediaStorage/
+scratch/
+
+# --- IDE & OS Files ---
+.DS_Store
+Thumbs.db
+.idea/
+**/.idea/
+.vscode/
+**/.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

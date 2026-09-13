@@ -1,0 +1,51 @@
+{
+  "full_features": [
+    "MonthlyIncome",
+    "OverTime",
+    "YearsAtCompany",
+    "Department",
+    "DistanceFromHome",
+    "JobSatisfaction",
+    "YearsSinceLastPromotion",
+    "WorkLifeBalance",
+    "PerformanceRating",
+    "Age",
+    "TotalWorkingYears",
+    "YearsInCurrentRole",
+    "YearsWithCurrManager",
+    "NumCompaniesWorked",
+    "StockOptionLevel"
+  ],
+  "reduced_features": [
+    "MonthlyIncome",
+    "OverTime",
+    "YearsAtCompany",
+    "Department",
+    "DistanceFromHome"
+  ],
+  "model_flavor": "XGBoost",
+  "full_feature_importances": {
+    "MonthlyIncome": 0.0768105685710907,
+    "OverTime": 0.20597264170646667,
+    "YearsAtCompany": 0.06612174212932587,
+    "Department": 0.036525629460811615,
+    "DistanceFromHome": 0.06138915941119194,
+    "JobSatisfaction": 0.08979122340679169,
+    "YearsSinceLastPromotion": 0.07877832651138306,
+    "WorkLifeBalance": 0.08344877511262894,
+    "PerformanceRating": 0.03254794701933861,
+    "Age": 0.03279580920934677,
+    "TotalWorkingYears": 0.05169595777988434,
+    "YearsInCurrentRole": 0.04097716137766838,
+    "YearsWithCurrManager": 0.0339052714407444,
+    "NumCompaniesWorked": 0.0441012978553772,
+    "StockOptionLevel": 0.06513849645853043
+  },
+  "reduced_feature_importances": {
+    "MonthlyIncome": 0.13544663786888123,
+    "OverTime": 0.5448450446128845,
+    "YearsAtCompany": 0.12887461483478546,
+    "Department": 0.07307207584381104,
+    "DistanceFromHome": 0.11776162683963776
+  }
+}
