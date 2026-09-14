@@ -51,6 +51,11 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse(ex.getMessage(), "ML_SERVICE_ERROR"));
     }
 
+    @ExceptionHandler(org.springframework.web.context.request.async.AsyncRequestNotUsableException.class)
+    public void handleAsyncRequestNotUsable(org.springframework.web.context.request.async.AsyncRequestNotUsableException ex) {
+        log.debug("Async client disconnected / output stream closed: {}", ex.getMessage());
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneral(Exception ex) {
         log.error("Unhandled exception: {}", ex.getMessage(), ex);

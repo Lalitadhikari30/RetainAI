@@ -40,10 +40,16 @@ public class NotificationService {
         emitter.onTimeout(() -> {
             log.debug("SSE emitter timed out");
             emitters.remove(emitter);
+            try {
+                emitter.complete();
+            } catch (Exception ignored) {}
         });
         emitter.onError((e) -> {
-            log.debug("SSE emitter error: {}", e.getMessage());
+            log.debug("SSE emitter error: {}", e != null ? e.getMessage() : "closed");
             emitters.remove(emitter);
+            try {
+                emitter.complete();
+            } catch (Exception ignored) {}
         });
 
         // Send initial connection handshake event
@@ -55,8 +61,11 @@ public class NotificationService {
                             "timestamp", LocalDateTime.now().toString(),
                             "unreadCount", notificationRepository.countByReadFalse()
                     )));
-        } catch (IOException e) {
+        } catch (Exception e) {
             emitters.remove(emitter);
+            try {
+                emitter.complete();
+            } catch (Exception ignored) {}
         }
 
         return emitter;
@@ -87,6 +96,9 @@ public class NotificationService {
                         .data(saved));
             } catch (Exception e) {
                 deadEmitters.add(emitter);
+                try {
+                    emitter.complete();
+                } catch (Exception ignored) {}
             }
         }
         emitters.removeAll(deadEmitters);
@@ -107,6 +119,9 @@ public class NotificationService {
                 emitter.send(SseEmitter.event().comment("ping"));
             } catch (Exception e) {
                 deadEmitters.add(emitter);
+                try {
+                    emitter.complete();
+                } catch (Exception ignored) {}
             }
         }
         emitters.removeAll(deadEmitters);
